@@ -24,8 +24,7 @@ def get_property_lists():
     for property in properties:
         address = property.find(class_="propertyCard-address").getText().strip()
         price = property.find(class_="propertyCard-priceValue").getText().split()[0]
-        raw_link = property.find("a", attrs={'class': 'propertyCard-priceLink'})["href"]
-        link = f"https://www.rightmove.co.uk{raw_link}"
+        link = property.find("a", attrs={'class': 'propertyCard-priceLink'})["href"]
 
         addresses.append(address)
         prices.append(price)
